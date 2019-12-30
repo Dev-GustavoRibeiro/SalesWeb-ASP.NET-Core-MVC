@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SalesWebMVC.Models;
+using System.Diagnostics;
 
 namespace SalesWebMVC.Controllers
 {
@@ -20,14 +16,14 @@ namespace SalesWebMVC.Controllers
 
         public IActionResult Index()
         {
-            ViewData["Message"] = "Sales Web MVC App from C# Course";
-            ViewData["Creator"] = "Gustavo Ribeiro";
+            ViewData["Tip"] = "Use the navigation bar to switch between screens.";
+            ViewData["Description"] = "SalesWebMVC, a system for managing salespeople and their sales.";
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Support()
         {
-            ViewData["email"] = "gustavo@gmail.com";
+            ViewData["email"] = "fulano@gmail.com";
             return View();
         }
 

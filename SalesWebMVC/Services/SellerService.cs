@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
 using SalesWebMVC.Data;
 using SalesWebMVC.Models;
 using SalesWebMVC.Services.Exceptions;
-using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace SalesWebMVC.Services
 {
@@ -26,7 +24,7 @@ namespace SalesWebMVC.Services
         public async Task InsertAsync(Seller obj)
         {
             _context.Add(obj);
-           await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
 
         public async Task<Seller> FindByIdAsync(int id)
@@ -42,7 +40,7 @@ namespace SalesWebMVC.Services
                 _context.Seller.Remove(obj);
                 await _context.SaveChangesAsync();
             }
-            catch (DbUpdateException e)
+            catch (DbUpdateException)
             {
                 throw new IntegrityException("Can't delete seller because he/she has sales");
             }
