@@ -23,7 +23,7 @@ namespace SalesWebMVC.Controllers
 
         public IActionResult Support()
         {
-            ViewData["email"] = "fulano@gmail.com";
+            ViewData["email"] = "g2_ribeiro@hotmail.com";
             return View();
         }
 
